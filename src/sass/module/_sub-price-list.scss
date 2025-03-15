@@ -1,0 +1,87 @@
+@use "global" as *;
+
+.sub-price-list {
+  width: 100%;
+  line-height: 1;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.sub-price-lists {
+  display: grid;
+  gap: rem(37);
+  @include mq("md") {
+    gap: rem(80);
+  }
+}
+
+.sub-price-list__head {
+  position: relative;
+  padding-block: calc(rem(8) - rem(1));
+  padding-left: rem(32);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  color: $white;
+  background-color: $green3;
+  border: 1px solid $green3;
+  @include mq(md) {
+    width: 28.57%;
+    padding-top: rem(41);
+    padding-left: 0;
+    padding-bottom: rem(111);
+  }
+}
+
+.sub-price-list__head::before {
+  background: url("/assets/images/common/sub-information-icon1-1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  margin-left: rem(-32);
+  width: rem(24);
+  height: rem(24);
+  z-index: 1;
+  @include mq("md") {
+    top: rem(103);
+    left: 50%;
+    transform: translateY(-50%);
+    width: rem(64);
+    height: rem(64);
+  }
+}
+
+.sub-price-lists__wrapper:nth-of-type(2) .sub-price-list__head::before,
+.sub-price-lists__wrapper:nth-of-type(3) .sub-price-list__head::before {
+  @include mq("md") {
+    top: rem(133);
+  }
+}
+
+.sub-price-list__data {
+  padding-block: calc(rem(7) - rem(1));
+  padding-inline: rem(15);
+  line-height: calc(24 / 16);
+  color: $green;
+  width: 70%;
+  border: 1px solid $green3;
+  @include mq(md) {
+    width: 48.57%;
+    text-align: left;
+    padding: calc(rem(18) - rem(1)) calc(rem(16) - rem(1));
+  }
+}
+
+.sub-price-list__value {
+  text-align: right;
+  padding: calc(rem(18) - rem(1)) rem(16);
+  line-height: calc(24 / 16);
+  color: $green;
+  width: 70%;
+  border: 1px solid $green3;
+  @include mq(md) {
+    padding: calc(rem(18) - rem(1)) rem(16);
+    width: 48.57%;
+  }
+}

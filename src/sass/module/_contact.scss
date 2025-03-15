@@ -1,0 +1,130 @@
+@use "global" as *;
+
+.contact {
+  position: relative;
+}
+
+.contact::before {
+  content: "";
+  background: url("/assets/images/common/contact-fish-img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: rem(-26);
+  left: calc(50% + rem(63.5));
+  width: rem(109);
+  height: rem(50);
+  @include mq("md") {
+    top: rem(-37);
+    left: auto;
+    right: calc(max(0px, 50% - min(48vw, rem(670))));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.contact__list {
+  @include mq(md) {
+    display: flex;
+    box-shadow: 4px 4px 10px rgba($color: #000, $alpha: 0.25);
+    align-items: center;
+    background-color: #fff;
+    padding: rem(80) rem(50);
+    width: 100%;
+  }
+}
+
+
+.contact__item:nth-child(1) {
+  padding-inline: rem(25);
+  @include mq("md") {
+    padding-inline: rem(0);
+  }
+}
+
+.contact__item:nth-child(2) {
+  margin-top: rem(40);
+  filter: drop-shadow(0px 4px 4px rgba($color: #000, $alpha: 0.25));
+  @include mq("md") {
+    filter: none;
+    z-index: 1;
+    margin-top: rem(0);
+    margin-inline: auto;
+    padding-left: rem(20);
+  }
+}
+
+.contact__item-content {
+  @include mq("md") {
+    border-right: 1px solid $green3;
+    padding-right: rem(81);
+  }
+}
+
+.contact__item-logo {
+  max-width: rem(174);
+  width: 100%;
+  margin-inline: auto;
+  padding-bottom: rem(5);
+  filter: drop-shadow(0px 4px 4px rgba($color: #000, $alpha: 0.25));
+  @include mq("md") {
+    max-width: rem(200);
+    padding-bottom: rem(8);
+    filter: none;
+  }
+}
+
+.contact__item-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact__wrap {
+  filter: drop-shadow(0px 4px 4px rgba($color: #000, $alpha: 0.25));
+  border-top: 1px solid $green3;
+  padding-top: rem(16);
+  max-width: rem(600);
+  margin-inline: auto;
+  @include mq("md") {
+    filter: none;
+    max-width: rem(440);
+    display: flex;
+    padding-top: rem(24);
+  }
+}
+
+.contact__wrap-text {
+  @include mq("md") {
+    padding-top: rem(0);
+    width: calc(calc(146 / 440) * 100%);
+  }
+}
+
+.contact__item-text + .contact__item-text {
+  margin-top: rem(4);
+}
+
+.contact__item-text {
+  font-size: rem(16);
+  line-height: calc(24 / 16);
+  color: $green;
+  text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.contact__item-text.contact__item-text--small {
+  margin-top: rem(8);
+  font-size: rem(14);
+  line-height: calc(18 / 14);
+  color: $green3;
+  text-align: center;
+}
+
+.contact__btn {
+  text-align: center;
+  margin-top: rem(38);
+  padding-bottom: rem(4);
+}

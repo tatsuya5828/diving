@@ -1,0 +1,19 @@
+@use "global" as *;
+
+.blog-card-lists {
+  position: relative;
+  display: grid;
+  gap: rem(39);
+  grid-template-columns: repeat(1, 1fr);
+  @include mq(md) {
+    gap: rem(40);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card-lists.blog-card-lists--2col {
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(80);
+  }
+}

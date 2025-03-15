@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.swiper-slide {
+  width: rem(280);
+  flex-shrink: 0;
+  @include mq("md") {
+    width: rem(333);
+  }
+}

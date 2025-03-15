@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.sub-about {
+  position: relative;
+}
+
+.about.sub-about::before {
+  content: "";
+  position: absolute;
+  background: url("/assets/images/common/voice-fish-img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(-25);
+  left: calc(max(0px, 50% - min(46vw, rem(400))));
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-149);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.sub-about::after {
+  @include mq("md") {
+    content: "";
+    background: url("/assets/images/common/contact-fish-img.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: rem(-180);
+    right: calc(max(0px, 50% - min(48vw, rem(637))));
+    width: rem(301);
+    height: rem(138);
+    z-index: 1;
+  }
+}

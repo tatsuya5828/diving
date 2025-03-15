@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.price {
+  position: relative;
+  background: $green2;
+}
+
+.price__inner {
+  max-width: rem(630);
+}
+
+.price__inner::after {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background: url("/assets/images/common/price-fish-img.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: rem(58);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(437);
+    height: rem(201);
+    z-index: 1;
+  }
+}
+
+.price__content {
+  margin-top: rem(29);
+  @include mq("md") {
+    margin-top: rem(40);
+    display: flex;
+    gap: rem(95);
+    flex-wrap: wrap;
+    order: 2;
+    flex: 1;
+  }
+}
+
+.price__img {
+  width: 100%;
+  @include mq("md") {
+    order: 1;
+    flex: 1;
+    width: calc(calc(492 / 1080) * 100%);
+  }
+}
+
+.price__img img {
+  width: 100%;
+  aspect-ratio: 345/227;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 492/745;
+  }
+}
+
+.price__lists {
+  @include mq("md") {
+    width: calc(calc(492 / 1080) * 100%);
+  }
+}
+
+.price__btn {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

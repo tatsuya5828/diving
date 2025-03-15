@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.blog__inner {
+  max-width: rem(630);
+}
+
+.blog__inner::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background: url("/assets/images/common/blog-bg-img.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(calc(500 / 825) * 100%);
+    z-index: -1;
+  }
+}
+
+.blog__inner::after {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background: url("/assets/images/common/blog-fish-img.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: rem(24);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(437);
+    height: rem(201);
+    z-index: 1;
+  }
+}
+
+.blog__lists{
+  margin-top: rem(29);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.blog__btn {
+  margin-top: rem(42);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(79);
+  }
+}

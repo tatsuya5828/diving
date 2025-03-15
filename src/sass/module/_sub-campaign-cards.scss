@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.sub-campaign-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(39);
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+    row-gap: rem(80);
+  }
+}
+
+// .sub-campaign-cards__item {
+//   display: none;
+// }
+
+// .sub-campaign-cards__item.is-active {
+//   display: block;
+//   animation: fade 0.3s;
+// }
+
+.sub-campaign__cards {
+  margin-top: rem(40);
+  width: 81.159%;
+  margin-inline: auto;
+  @include mq("md") {
+    width: 100%;
+  }
+}

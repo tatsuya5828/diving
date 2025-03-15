@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.error-page {
+  position: relative;
+  background: $green3;
+  padding-bottom: rem(40);
+  @include mq("md") {
+    padding-bottom: rem(157);
+  }
+}
+
+.error-page::before {
+  content: "";
+  background: url("/assets/images/common/error-img.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: rem(80);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(345);
+  height: rem(345);
+  z-index: 1;
+  @include mq("md") {
+    top: rem(90);
+    width: rem(698);
+    height: rem(698);
+    left: calc(max(0px, 50% - min(48vw, rem(190))));
+  }
+}
+
+.error-page__inner {
+  max-width: rem(630);
+}
+
+.error-page__number {
+  position: relative;
+  z-index: 2;
+  padding-top: rem(52);
+  text-align: center;
+  font-size: rem(80);
+  color: $white;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  line-height: calc(96 / 80);
+  font-family: $fourth-font-family;
+  @include mq("md") {
+    padding-top: rem(119);
+    font-size: rem(160);
+    line-height: calc(192 / 160);
+  }
+}
+.error-page__message {
+  text-align: center;
+  color: $white;
+  line-height: calc(24 / 16);
+  font-family: $fourth-font-family;
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.error-page__btn {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

@@ -1,0 +1,59 @@
+@use "global" as *;
+
+// .sub-tab__inner {
+//   display: flex;
+//   justify-content: center;
+//   @include mq("md") {
+//     justify-content: flex-start;
+//   }
+// }
+.sub-tab {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, auto);
+  gap: rem(20);
+  row-gap: calc(rem(16) - rem(2));
+  @include mq("md") {
+    grid-template-columns: repeat(auto-fit, minmax(auto, rem(162)));
+    place-content: initial;
+    gap: rem(32);
+  }
+}
+
+.sub-tab__menu-item a {
+  display: inline-block;
+  padding: calc(rem(6) - rem(1));
+  min-width: rem(162);
+  // width: fit-content;
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  color: $green3;
+  border: 1px solid $green3;
+  background-color: $white;
+  text-align: center;
+  transition: 0.3s;
+  // cursor: pointer;
+}
+
+.sub-tab__menu-item a:hover {
+  @include mq("md") {
+    color: $white;
+    background-color: $green3;
+    border-color: $green3;
+    opacity: 1;
+  }
+}
+
+.sub-tab__menu-item.is-active a {
+  color: $white;
+  background-color: $green3;
+}
+
+// @keyframes fade {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }

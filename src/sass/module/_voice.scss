@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.voice {
+  position: relative;
+}
+
+.voice__inner {
+  max-width: rem(630);
+}
+
+.voice__inner::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background: url("/assets/images/common/voice-fish-img.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: rem(-120);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(301);
+    height: rem(138);
+    z-index: 1;
+  }
+}
+
+.voice__inner::after {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background: url("/assets/images/common/voice-fish-img2.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: rem(-72);
+    right: calc(max(0px, 50% - min(48vw, rem(540))));
+    width: rem(71);
+    height: rem(162);
+    z-index: 1;
+  }
+}
+
+.voice__lists {
+  margin-top: rem(45);
+  @include mq("md") {
+    margin-top: rem(30);
+  }
+}
+
+.voice__btn {
+  margin-top: rem(39);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

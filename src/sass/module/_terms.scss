@@ -1,0 +1,89 @@
+@use "global" as *;
+
+.terms {
+  position: relative;
+}
+
+.terms::after {
+  content: "";
+  position: absolute;
+  background: url("/assets/images/common/voice-fish-img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(-25);
+  left: calc(max(0px, 50% - min(48vw, rem(172))));
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.terms__inner {
+  max-width: rem(630);
+  @include mq("md") {
+    max-width: rem(850);
+  }
+}
+
+.terms__title {
+  font-size: rem(24);
+  color: $green;
+  font-weight: $medium;
+  line-height: calc(35 / 24);
+  @include mq("md") {
+    font-size: rem(32);
+    line-height: calc(46 / 32);
+  }
+}
+
+.terms__introduction {
+  margin-top: rem(40);
+  line-height: calc(32 / 16);
+  color: $green;
+}
+
+.terms__items {
+  margin-top: rem(31);
+}
+
+.terms__item + .terms__item {
+  margin-top: rem(31);
+}
+
+.terms__description {
+  margin-top: rem(15);
+  line-height: calc(32 / 16);
+}
+
+.terms__description-numbers {
+  counter-reset: number;
+}
+
+.terms__description-text + .terms__description-numbers,
+.terms__description-text + .terms__description-items {
+  margin-top: rem(1);
+}
+
+.terms__description-number {
+  padding-left: rem(24);
+  text-indent: rem(-19);
+  @include mq("md") {
+    padding-left: rem(25);
+  }
+}
+
+.terms__description-number::before {
+  content: counter(number) ". ";
+  counter-increment: number;
+}
+
+.terms__outroduction {
+  margin-top: rem(31);
+  line-height: calc(32 / 16);
+  color: $green;
+}

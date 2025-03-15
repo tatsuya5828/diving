@@ -1,0 +1,309 @@
+@use "global" as *;
+
+.form__wrap {
+  @include mq(md) {
+    display: flex;
+  }
+}
+
+.form__wrap:nth-of-type(1) {
+  border-bottom: 1px dashed $green3;
+  padding-bottom: rem(24);
+  @include mq("md") {
+    padding-bottom: rem(40);
+  }
+}
+
+.form__wrap + .form__wrap {
+  border-bottom: 1px dashed $green3;
+  margin-top: rem(24);
+  padding-bottom: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+    padding-bottom: rem(40);
+  }
+}
+
+.form__wrap.form__wrap--margin {
+  @include mq("md") {
+    margin-top: rem(34);
+  }
+}
+
+.form__label {
+  color: $green;
+  font-weight: $bold;
+  line-height: calc(23 / 16);
+  @include mq(md) {
+    max-width: rem(220);
+    width: 100%;
+  }
+}
+
+.form__label span {
+  margin-left: rem(8);
+  padding: rem(2) rem(14);
+  display: inline-block;
+  font-size: rem(12);
+  letter-spacing: 0.4em;
+  color: $white;
+  background-color: #c94800;
+}
+
+.form__input,
+.form__select,
+.form__radio,
+.form__checkbox,
+.form__textarea {
+  margin-top: rem(16);
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.form__input,
+.form__textarea {
+  flex-grow: 1;
+}
+
+.form-input input {
+  padding: calc(rem(8) - rem(1)) calc(rem(16) - rem(1));
+  width: 100%;
+  line-height: calc(23 / 16);
+  border-radius: 0;
+  border: 1px solid $green3;
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+}
+
+.form-input input:focus {
+  border: 1px solid $green3;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-input input::placeholder {
+  color: #ddf0f1;
+}
+
+.form-select {
+  flex-grow: 1;
+}
+
+.form-select select {
+  padding: calc(rem(11) - rem(1)) calc(rem(8) - rem(1)) calc(rem(12) - rem(1)) calc(rem(8) - rem(1));
+  width: 100%;
+  font-size: rem(12);
+  line-height: calc(17 / 12);
+  border-radius: 0;
+  border: 1px solid $green3;
+  background-image: url("/assets/images/common/arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-size: rem(12);
+  background-position: right rem(8) top rem(14);
+  appearance: none;
+  cursor: pointer;
+  @include mq("md") {
+    padding: calc(rem(7) - rem(1)) calc(rem(8) - rem(1)) calc(rem(6) - rem(1)) calc(rem(8) - rem(1));
+    background-position: right rem(8) top rem(10);
+  }
+}
+
+.form-select select::-ms-expand {
+  display: none;
+}
+
+.form-select select:focus {
+  border: 1px solid $green3;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-checkbox label {
+  display: block;
+}
+
+.form-checkbox label:not(:first-of-type) {
+  margin-top: rem(3);
+  @include mq("md") {
+    margin-top: rem(4);
+  }
+}
+
+.form-checkbox input {
+  display: none;
+}
+
+.form-checkbox input + span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 0 0 rem(23);
+  position: relative;
+  line-height: calc(19 / 16);
+}
+
+.form-checkbox input + span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid $green3;
+  display: block;
+  width: rem(14);
+  height: rem(14);
+}
+
+.form-checkbox input + span::after {
+  content: "";
+  margin-top: rem(-1);
+  margin-left: rem(2);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-35deg);
+  display: block;
+  width: rem(9);
+  height: rem(5);
+  border-bottom: rem(2) solid #c94800;
+  border-left: rem(2) solid #c94800;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.form-checkbox input:checked + span::after {
+  opacity: 1;
+}
+
+.form__textarea {
+  height: rem(200);
+}
+
+.form-textarea textarea {
+  padding: calc(rem(8) - rem(1)) calc(rem(15) - rem(1));
+  width: 100%;
+  height: rem(200);
+  font-size: rem(15);
+  border-radius: 0;
+  border: 1px solid $green3;
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+  resize: none;
+}
+
+.form-textarea textarea:focus {
+  border: 1px solid $green3;
+  box-shadow: none;
+  outline: none;
+}
+
+.contact__form-privacy {
+  text-align: center;
+  margin-top: rem(36);
+  @include mq("md") {
+    margin-top: rem(76);
+  }
+}
+
+.contact__form-privacy input {
+  display: none;
+}
+
+.contact__form-privacy input + span {
+  cursor: pointer;
+  display: inline-block;
+  text-align: left;
+  padding: 0 0 0 rem(31);
+  position: relative;
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  @include mq("md") {
+    padding: 0 0 0 rem(38);
+  }
+}
+
+.contact__form-privacy input + span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $white;
+  border: 1px solid $green3;
+  display: block;
+  width: rem(22);
+  height: rem(22);
+}
+
+.contact__form-privacy input + span::after {
+  content: "";
+  margin-top: rem(5);
+  margin-left: rem(3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-35deg);
+  display: block;
+  width: rem(15);
+  height: rem(8);
+  border-bottom: rem(2) solid #c94800;
+  border-left: rem(2) solid #c94800;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.contact__form-privacy input:checked + span::after {
+  opacity: 1;
+}
+
+.form__submit {
+  text-align: center;
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+/* 入力フィールド全体に対する共通設定 */
+.form-input input[type="text"],
+.form-input input[type="email"],
+.form-input input[type="tel"],
+.form-textarea textarea {
+  color: $green;
+}
+
+// ===================================
+// エラーメッセージ
+// ===================================
+
+.sub-contact__error-summary {
+  text-align: center;
+  margin-bottom: rem(40);
+  color: #c94800;
+  font-size: rem(14);
+  line-height: calc(20 / 14);
+  display: none;
+}
+
+input.invalid,
+textarea.invalid {
+  border: 1px solid #c94800;
+  background-color: rgba(201, 72, 0, 0.2);
+}
+
+input.invalid::placeholder {
+  color: white;
+}
+
+/* チェックボックスエラー用スタイル */
+.form-checkbox input.invalid + span::before {
+  border: 1px solid #c94800;
+  background-color: rgba(201, 72, 0, 0.2);
+}
+
+.contact__form-privacy input.invalid + span::before {
+  border: 1px solid #c94800;
+  background-color: rgba(201, 72, 0, 0.2);
+}

@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.sub-blog-sidebar {
+  display: grid;
+  gap: rem(90);
+}
+
+.sub-blog-sidebar__item:first-child {
+  padding-top: rem(8);
+}
+
+// .sub-blog-sidebar__item:nth-child(2),
+// .sub-blog-sidebar__item:nth-child(3),
+// .sub-blog-sidebar__item:nth-child(4) {
+//   margin-top: rem(90);
+// }
+
+.sub-blog-sidebar__title {
+  position: relative;
+  padding-left: rem(82);
+  font-size: rem(24);
+  font-weight: $regular;
+  color: $green;
+  line-height: calc(35 / 24);
+}
+
+.sub-blog-sidebar__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: $green3;
+  width: rem(8);
+  height: rem(50);
+}
+
+.sub-blog-sidebar__title::after {
+  content: "";
+  position: absolute;
+  width: rem(50);
+  height: rem(50);
+  left: rem(24);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: url(/assets/images/common/sub-blog-icon.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sub-blog-sidebar__list {
+  margin-top: rem(30);
+}
+
+.sub-blog-sidebar__cards {
+  margin-top: rem(30);
+}
+
+.sub-blog-sidebar__archive-list {
+  margin-top: rem(34);
+  display: grid;
+  gap: rem(10);
+}

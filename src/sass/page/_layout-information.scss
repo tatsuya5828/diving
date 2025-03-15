@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-information {
+  background: $green2;
+  margin-top: rem(74);
+  padding-block: rem(84) rem(84);
+  @include mq("md") {
+    margin-top: rem(164);
+    padding-block: rem(101) rem(76);
+  }
+}

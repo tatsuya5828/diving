@@ -1,0 +1,111 @@
+@use "global" as *;
+
+.blog-detail {
+  height: 100%;
+}
+
+.blog-detail__title-wrap {
+  border-bottom: 1px solid #408f95;
+}
+
+.blog-detail__item-category {
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: calc(18 / 12);
+  color: $green;
+  font-family: $third-font-family;
+  @include mq("md") {
+    font-size: rem(14);
+    line-height: calc(18 / 14);
+  }
+}
+
+.blog-detail__item-title {
+  margin-top: rem(8);
+  color: $green;
+  font-size: rem(24);
+  padding-bottom: rem(4);
+  font-weight: $medium;
+  line-height: calc(29 / 24);
+  @include mq("md") {
+    font-size: rem(32);
+    padding-bottom: rem(8);
+    line-height: calc(38 / 32);
+  }
+}
+
+.blog-detail__item-img {
+  width: 100%;
+  margin-top: rem(40);
+}
+
+.blog-detail__container {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.blog-detail__container p {
+  color: $green;
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+}
+
+.blog-detail__container p:not(:first-of-type) {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.blog-detail__container img {
+  width: 100%;
+  margin-top: rem(40);
+  aspect-ratio: 345 / 231;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 700 / 468;
+  }
+}
+
+.blog-detail__container ul {
+  margin-top: rem(24);
+  display: grid;
+  gap: rem(4);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.blog-detail__container li {
+  position: relative;
+  color: $green;
+  line-height: calc(24 / 16);
+  padding-left: rem(27);
+}
+
+.blog-detail__container li::before {
+  content: "";
+  position: absolute;
+  top: rem(12);
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(18);
+  height: rem(18);
+  background: url("/assets/images/common/sub-blog-icon-img.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// .blog-detail__container li + li {
+//   margin-top: rem(4);
+// }
+
+.blog-detail__pagenavi {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

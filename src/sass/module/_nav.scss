@@ -1,0 +1,141 @@
+@use "global" as *;
+
+.nav {
+  display: grid;
+  column-gap: rem(39);
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: rem(12);
+  padding-left: rem(23);
+
+  @include mq("md") {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: rem(0);
+    padding-left: rem(0);
+    margin-top: rem(11);
+  }
+}
+
+.nav.nav--margin {
+  margin-top: rem(0);
+  column-gap: rem(23);
+}
+
+.nav__items {
+  @include mq("md") {
+    padding-left: rem(22);
+  }
+}
+.nav__items:not(:first-child) {
+  @include mq("md") {
+    padding-left: rem(38);
+  }
+}
+
+.nav__items:nth-child(1) {
+  order: 1;
+}
+.nav__items:nth-child(2) {
+  order: 3;
+
+  @include mq("md") {
+    order: 2;
+  }
+}
+.nav__items:nth-child(3) {
+  order: 2;
+
+  @include mq("md") {
+    order: 3;
+  }
+}
+.nav__items:nth-child(4) {
+  order: 4;
+}
+
+.nav__item.nav__item--title {
+  position: relative;
+  margin-top: rem(16);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.nav__item.nav__item--title:not(:first-child) {
+  @include mq("md") {
+    margin-top: rem(16);
+  }
+}
+
+.nav__item.nav__item--title a {
+  display: inline-block;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  padding: rem(12) 0;
+}
+
+.nav__item.nav__item--title::before {
+  content: "";
+  position: absolute;
+  top: rem(12);
+  left: rem(-22);
+  background: url("/assets/images/common/footer-icon.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(18);
+  height: rem(18);
+}
+.nav__item.nav__item--sitemap {
+  position: relative;
+  margin-top: rem(16);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.nav__item.nav__item--sitemap:not(:first-child) {
+  @include mq("md") {
+    margin-top: rem(16);
+  }
+}
+
+.nav__item.nav__item--sitemap a {
+  display: inline-block;
+  color: $green;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  padding: rem(12) 0;
+}
+
+.nav__item.nav__item--sitemap::before {
+  content: "";
+  position: absolute;
+  top: rem(12);
+  left: rem(-22);
+  background: url("/assets/images/common/sitemap-icon.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(18);
+  height: rem(18);
+}
+
+.nav__item a {
+  display: inline-block;
+  padding: rem(12) 0;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(18 / 16);
+  white-space: nowrap;
+}
+
+.nav__item.nav__item--color a {
+  color: $green;
+}

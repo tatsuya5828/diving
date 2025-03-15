@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.voice-card-lists {
+  display: grid;
+  gap: rem(39);
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: calc(rem(40) - rem(1));
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: calc(rem(80) + rem(1));
+  }
+}
+
+// .voice-card-lists.voice-card-lists--sub {
+//   @include mq("md") {
+//   }
+// }
+
+// .voice-card-lists__item.voice-card-lists__item--none {
+//   display: none;
+// }
+
+// .voice-card-lists__item.is-active {
+//   display: block;
+//   animation: fade 0.3s;
+// }

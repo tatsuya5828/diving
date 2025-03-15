@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.sub-gallery__inner {
+  max-width: rem(630);
+}
+
+.sub-gallery__list {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.sub-gallery__modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  /* モーダル枠組みのスタイル */
+  // width: min(336px, 95%);
+  // max-height: 95vh;
+  // @include mq("md") {
+  //   width: min(920px, 95%);
+  // }
+  width: 95%;
+  max-width: rem(700);
+  @include mq("md") {
+    max-width: rem(920);
+  }
+}
+
+.sub-gallery__modal:nth-of-type(6n + 1),
+.sub-gallery__modal:nth-of-type(6n + 6) {
+  // width: min(rem(336), 95%);
+  // @include mq("md") {
+  //   width: min(rem(600), 95%);
+  // }
+  @include mq("md") {
+    max-width: rem(600);
+  }
+}
+
+.sub-gallery__modal[open] {
+  display: flex;
+  opacity: 1;
+}
+
+.sub-gallery__modal .modal__img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.sub-gallery__modal.is-open .modal__img {
+  opacity: 1;
+}
+
+.sub-gallery__modal.is-closing {
+  opacity: 0;
+}
+
+.sub-gallery__modal.is-closing .modal__img {
+  opacity: 0;
+}
+
+.sub-gallery__modal.is-closing::backdrop {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}

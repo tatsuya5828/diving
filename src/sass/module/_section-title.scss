@@ -1,0 +1,57 @@
+@use "global" as *;
+
+.section-title {
+  text-align: center;
+}
+
+.section-title__main {
+  font-size: rem(32);
+  color: $green;
+  font-family: $third-font-family;
+  font-weight: $regular;
+  line-height: 1;
+  @include mq("md") {
+    font-size: rem(40);
+  }
+}
+
+.section-title__main.section-title__main--big {
+  font-size: rem(80);
+}
+
+.section-title__main.section-title__main--white {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.section-title__main::first-letter {
+  color: $green3;
+}
+
+.section-title__main.section-title__main--white::first-letter {
+  @include mq("md") {
+    color: $green2;
+  }
+}
+
+.section-title__sub {
+  margin-top: rem(6);
+  font-size: rem(12);
+  color: $green3;
+  font-weight: $regular;
+  line-height: calc(18 / 12);
+  @include mq("md") {
+    margin-top: rem(8);
+  }
+}
+
+.section-title__sub.section-title__sub--contact {
+  margin-top: rem(-5);
+}
+
+.section-title__sub.section-title__sub--white {
+  @include mq("md") {
+    color: $white;
+  }
+}

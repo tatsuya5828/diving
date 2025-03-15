@@ -1,0 +1,101 @@
+@use "global" as *;
+
+.campaign {
+  position: relative;
+}
+
+.campaign__swiper-button-wrap {
+  position: absolute;
+  top: 0;
+  right: calc(50% - rem(540));
+  display: flex;
+  justify-content: right;
+  gap: rem(80);
+}
+
+.campaign__swiper-button-wrap .swiper-button-prev {
+  transform: scale(-1, 1);
+}
+
+.campaign__swiper-button-wrap .swiper-button-prev,
+.campaign__swiper-button-wrap .swiper-button-next {
+  position: relative;
+  width: rem(80);
+  height: rem(80);
+  border: 1px solid $green3;
+  border-radius: 50vh;
+  transition: opacity 0.3s;
+}
+
+.campaign__swiper-button-wrap .swiper-button-prev:hover,
+.campaign__swiper-button-wrap .swiper-button-next:hover {
+  opacity: 0.7;
+}
+
+.campaign__swiper-button-wrap .swiper-button-prev::before,
+.campaign__swiper-button-wrap .swiper-button-next::before {
+  content: "";
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  width: rem(40);
+  height: rem(1);
+  border-radius: 100vh;
+  transform: translate(-50%, -50%);
+  background-color: $green3;
+}
+
+.campaign__swiper-button-wrap .swiper-button-prev::after,
+.campaign__swiper-button-wrap .swiper-button-next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% + rem(9));
+  width: rem(10);
+  height: rem(1);
+  border-radius: 100vh;
+  transform: translate(-50%, -50%);
+  background-color: $green3;
+  transform: rotate(45deg);
+  transform-origin: 100% 50%;
+}
+
+//位置のreset
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+
+//デフォルトのボタンを初期化
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.campaign__swiper {
+  margin-top: rem(30);
+  margin-right: calc(50% - 50vw);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.campaign__swiper .swiper-slide {
+  height: auto;
+  padding-bottom: rem(13);
+}
+
+.campaign__btn {
+  text-align: center;
+  margin-top: rem(27);
+  padding-bottom: rem(4);
+  @include mq("md") {
+    margin-top: rem(66);
+  }
+}

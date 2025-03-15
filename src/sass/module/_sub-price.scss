@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.sub-price {
+  position: relative;
+}
+
+.sub-price__inner.inner {
+  max-width: rem(630);
+  @include mq("md") {
+    max-width: rem(750);
+  }
+}
+
+.sub-price__inner::after {
+  content: "";
+  position: absolute;
+  background: url("/assets/images/common/voice-fish-img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(-24);
+  left: calc(max(0px, 50% - min(46vw, rem(400))));
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(301);
+    height: rem(138);
+  }
+}

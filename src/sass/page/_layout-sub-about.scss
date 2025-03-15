@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-sub-about {
+  margin-top: rem(52);
+  @include mq("md") {
+    margin-top: rem(230);
+  }
+}
+
+
+

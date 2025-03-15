@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.pagetop {
+  position: fixed;
+  right: rem(15);
+  bottom: rem(16);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 999;
+
+  @include mq("md") {
+    right: rem(20);
+    bottom: rem(20);
+  }
+}
+
+.pagetop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagetop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.pagetop img {
+  width: rem(48);
+  border-radius: 100vh;
+
+  @include mq("md") {
+    width: rem(80);
+  }
+}

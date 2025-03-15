@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.sub-blog-review__item-img {
+  margin-top: rem(30);
+}
+
+.sub-blog-review__item-img img {
+  aspect-ratio: 294 / 218;
+  object-fit: cover;
+  height: auto;
+  @include mq("md") {
+  }
+}
+
+.sub-blog-review__title-wrap {
+  margin-top: rem(16);
+}
+
+.sub-blog-review__item-age {
+  font-size: rem(12);
+  color: $green;
+  line-height: calc(18 / 12);
+}
+
+.sub-blog-review__item-title {
+  margin-top: rem(8);
+  font-size: rem(24);
+  color: $green;
+  line-height: calc(35 / 24);
+  font-weight: $medium;
+}

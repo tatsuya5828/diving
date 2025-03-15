@@ -1,0 +1,89 @@
+@use "global" as *;
+
+.privacy-policy {
+  position: relative;
+}
+
+.privacy-policy::after {
+  content: "";
+  position: absolute;
+  background: url("/assets/images/common/voice-fish-img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(-25);
+  left: calc(max(0px, 50% - min(48vw, rem(172))));
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(max(0px, 50% - min(48vw, rem(620))));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.privacy-policy__inner {
+  max-width: rem(630);
+  @include mq("md") {
+    max-width: rem(850);
+  }
+}
+
+.privacy-policy__title {
+  font-size: rem(24);
+  color: $green;
+  font-weight: $medium;
+  line-height: calc(35 / 24);
+  @include mq("md") {
+    font-size: rem(32);
+    line-height: calc(46 / 32);
+  }
+}
+
+.privacy-policy__introduction {
+  margin-top: rem(40);
+  line-height: calc(32 / 16);
+  color: $green;
+}
+
+.privacy-policy__items {
+  margin-top: rem(31);
+}
+
+.privacy-policy__item + .privacy-policy__item {
+  margin-top: rem(31);
+}
+
+.privacy-policy__description {
+  margin-top: rem(15);
+  line-height: calc(32 / 16);
+}
+
+.privacy-policy__description-numbers {
+  counter-reset: number;
+}
+
+.privacy-policy__description-text + .privacy-policy__description-numbers,
+.privacy-policy__description-text + .privacy-policy__description-items {
+  margin-top: rem(1);
+}
+
+.privacy-policy__description-number {
+  padding-left: rem(24);
+  text-indent: rem(-19);
+  @include mq("md") {
+    padding-left: rem(25);
+  }
+}
+
+.privacy-policy__description-number::before {
+  content: counter(number) ". ";
+  counter-increment: number;
+}
+
+.privacy-policy__outroduction {
+  margin-top: rem(31);
+  line-height: calc(32 / 16);
+  color: $green;
+}

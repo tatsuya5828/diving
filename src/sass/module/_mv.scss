@@ -1,0 +1,167 @@
+@use "global" as *;
+
+.mv {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  min-height: rem(400);
+}
+
+.mv__inner {
+  height: inherit;
+  min-height: inherit;
+}
+
+.mv__title-wrap {
+  position: absolute;
+  color: $white;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.mv__loading-title {
+  color: $green3;
+}
+
+.mv__main-title {
+  font-size: rem(40);
+  letter-spacing: 0.54em;
+  text-indent: 0.54em;
+  line-height: calc(48 / 40);
+  font-weight: $regular;
+  font-family: $fourth-font-family;
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+  }
+}
+
+.mv__sub-title {
+  font-size: rem(20);
+  line-height: calc(33 / 20);
+  font-weight: $regular;
+  font-family: $third-font-family;
+}
+
+/* ローディングアニメーション全体 */
+.fv-loading {
+  animation: out 3s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* ローディング内のコンテナ */
+.fv-loading__container {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  @include mq("md") {
+    flex-direction: row;
+  }
+}
+
+/* 左右のスプリット画像 */
+.fv-loading__split-left,
+.fv-loading__split-right {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  @include mq("md") {
+    width: 50vw;
+  }
+}
+
+/* 左右画像共通の初期設定 */
+.fv-loading__split-left img,
+.fv-loading__split-right img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(100%);
+  animation: fadeSlideUp 1s ease-in-out forwards;
+}
+
+/* 左側画像のスライドイン */
+.fv-loading__split-left img {
+  animation: slideInTop 4s cubic-bezier(0.7, 0, 0.8, 1) forwards;
+  object-position: center bottom;
+  @include mq("md") {
+    animation: slideInLeftFast 4s cubic-bezier(0.7, 0, 0.8, 1) forwards;
+    object-position: right center;
+  }
+}
+
+/* 右側画像のアニメーション */
+.fv-loading__split-right img {
+  animation: slideInRightFastShrink 4s cubic-bezier(0.7, 0, 0.8, 1) forwards;
+  animation-delay: 0.1s;
+  object-position: center top;
+  @include mq("md") {
+    animation: slideInRightFastShrink 4s cubic-bezier(0.7, 0, 0.8, 1) forwards;
+    animation-delay: 0.1s;
+    object-position: left center;
+  }
+}
+
+@keyframes slideInLeftFast {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRightFastShrink {
+  0% {
+    transform: translateY(100%) scale(0.8);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(100%) scale(0.8);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mv__swiper,
+.mv__swiper .mv__swiper-img,
+.mv__swiper .mv__swiper-img picture,
+.mv__swiper .mv__swiper-img img {
+  height: inherit;
+  min-height: inherit;
+}
+
+.mv__swiper .mv__swiper-img img {
+  width: 100%;
+  object-fit: cover;
+}

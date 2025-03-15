@@ -1,0 +1,123 @@
+@use "global" as *;
+
+.pagenavi .wp-pagenavi {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  gap: rem(40);
+}
+
+.pagenavi.pagenavi--gap .wp-pagenavi {
+  gap: rem(80);
+}
+
+.pagenavi .wp-pagenavi .pagenavi__wrap {
+  display: flex;
+  gap: rem(12);
+}
+
+.pagenavi .wp-pagenavi a,
+.pagenavi .wp-pagenavi span {
+  text-align: center;
+  place-content: center;
+  padding-inline: rem(5);
+  min-width: rem(38);
+  height: rem(38);
+  font-weight: $bold;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid $green3;
+  color: $green3;
+  background-color: $white;
+  transition: 0.3s;
+  font-family: $fourth-font-family;
+}
+
+.pagenavi .wp-pagenavi a:hover {
+  @include mq("md") {
+    color: $white;
+    background-color: $green3;
+    border-color: $green3;
+    opacity: 1;
+  }
+}
+
+.pagenavi .wp-pagenavi .current {
+  color: $white;
+  background-color: $green3;
+  border-color: $green3;
+}
+
+.pagenavi .wp-pagenavi .previouspostslink {
+  position: relative;
+  display: grid;
+  place-content: center;
+  min-width: rem(38);
+  height: rem(38);
+}
+
+.previouspostslink::before,
+.previouspostslink::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: rem(13);
+  width: 11.3px;
+  height: 1px;
+  border-radius: 100vh;
+  background-color: $green3;
+  transform-origin: 0.5px 50%;
+}
+
+.previouspostslink::before {
+  transform: rotate(46.95deg);
+}
+
+.previouspostslink::after {
+  transform: rotate(-46.95deg);
+}
+
+.previouspostslink:hover::before,
+.previouspostslink:hover::after {
+  @include mq("md") {
+    background-color: $white;
+    opacity: 1;
+  }
+}
+
+.pagenavi .wp-pagenavi .nextpostslink {
+  position: relative;
+  display: grid;
+  place-content: center;
+  min-width: rem(38);
+  height: rem(38);
+}
+
+.nextpostslink::before,
+.nextpostslink::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: rem(13);
+  width: 11.3px;
+  height: 1px;
+  border-radius: 100vh;
+  background-color: $green3;
+  transform-origin: calc(100% - 0.5px) 50%;
+}
+
+.nextpostslink::before {
+  transform: rotate(46.95deg);
+}
+
+.nextpostslink::after {
+  transform: rotate(-46.95deg);
+}
+
+.nextpostslink:hover::before,
+.nextpostslink:hover::after {
+  @include mq("md") {
+    background-color: $white;
+    opacity: 1;
+  }
+}

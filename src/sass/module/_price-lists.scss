@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.price-lists__category {
+  margin-top: rem(39);
+}
+
+.price-lists__category:first-child {
+  @include mq("md") {
+    margin-top: rem(0);
+  }
+}

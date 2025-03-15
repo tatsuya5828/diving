@@ -1,0 +1,102 @@
+@use "global" as *;
+
+.information-list__item {
+  @include mq(md) {
+    display: flex;
+    gap: rem(48);
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.information-list__item.information-list__item--sub {
+  display: none;
+  border: 2px solid $green3;
+  padding: calc(rem(24) - 2px);
+  @include mq(md) {
+    padding-inline: 0;
+  }
+}
+
+.information-list__item.information-list__item--sub.is-active {
+  display: block;
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade 0.3s;
+  }
+}
+
+.information-list__item-img {
+  width: 100%;
+  @include mq(md) {
+    width: calc(calc(540 / 1080) * 100%);
+  }
+}
+
+.information-list__item-img.information-list__item-img--sub {
+  margin-top: rem(8);
+  @include mq(md) {
+    width: calc(calc(492 / 1080) * 100% + 2px);
+    margin-top: 0;
+  }
+}
+
+.information-list__item-img img {
+  width: 100%;
+  aspect-ratio: 345 / 227;
+  height: auto;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 540 / 356;
+  }
+}
+
+.information-list__item-img.information-list__item-img--sub img {
+  aspect-ratio: 297 / 189;
+  @include mq("md") {
+    aspect-ratio: 492 / 313;
+  }
+}
+
+.information-list__item-wrap {
+  @include mq("md") {
+    width: calc(calc(492 / 1080) * 100%);
+  }
+}
+
+.information-list__item-wrap.information-list__item-wrap--sub {
+  @include mq("md") {
+    margin-left: 0;
+    width: calc(calc(492 / 1080) * 100% + 2px);
+  }
+}
+
+.information-list__item-text {
+  margin-top: rem(24);
+  font-size: rem(20);
+  line-height: calc(24 / 20);
+  font-weight: $bold;
+  color: $green;
+  padding-bottom: rem(4);
+  @include mq(md) {
+    margin-top: 0;
+    font-size: rem(24);
+    line-height: 1;
+    padding-bottom: rem(8);
+  }
+}
+
+.information-list__item-text.information-list__item-text--sub {
+  margin-top: rem(0);
+  font-size: rem(24);
+}
+
+.information-list__description {
+  border-top: 1px solid $green3;
+  padding-top: rem(8);
+  line-height: calc(24 / 16);
+  font-weight: $regular;
+  color: $green;
+}

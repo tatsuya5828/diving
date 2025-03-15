@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.layout-price {
+  margin-top: rem(85);
+  padding-block: rem(84) rem(84);
+  @include mq("md") {
+    margin-top: rem(144);
+    padding-top: rem(100);
+    padding-bottom: rem(103);
+  }
+}
+

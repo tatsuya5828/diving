@@ -1,0 +1,50 @@
+@use "global" as *;
+
+.sub-blog-popularity {
+  display: flex;
+  gap: rem(16);
+  height: 100%;
+  background-color: $white;
+  box-shadow: 2px 2px 10px rgba($color: #000, $alpha: 0.25);
+  padding: rem(16);
+}
+
+.sub-blog-popularity__item-img {
+  width: 46.2%;
+  overflow: hidden;
+}
+
+.sub-blog-popularity__item-img img {
+  width: 100%;
+  aspect-ratio: 121 / 90;
+  object-fit: cover;
+  transition: 0.6s;
+  @include mq("md") {
+  }
+}
+
+.sub-blog-popularity__title-wrap {
+  width: 47.7%;
+}
+
+.sub-blog-popularity__item-category {
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: calc(18 / 12);
+  color: $green;
+  font-family: $third-font-family;
+}
+
+.sub-blog-popularity__item-title {
+  margin-top: rem(4);
+  color: $green;
+  font-weight: $medium;
+  line-height: calc(24 / 16);
+}
+
+.sub-blog-popularity__item-text {
+  color: $green;
+  margin-top: rem(16);
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+}

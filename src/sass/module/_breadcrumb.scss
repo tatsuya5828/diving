@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.breadcrumb.breadcrumb--white span {
+  color: $white;
+}
+
+.breadcrumb__inner {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+  max-width: rem(600);
+}
+
+.breadcrumb span {
+  font-size: rem(14);
+  color: $green;
+  font-weight: $regular;
+  text-transform: uppercase;
+}
+
+.breadcrumb span a {
+  position: relative;
+}
+
+.breadcrumb span a::before,
+.breadcrumb span a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(-13);
+  width: rem(5.6);
+  height: rem(1);
+  border-radius: 100vh;
+  background-color: $green;
+  transform-origin: calc(100% - 0.5px) 50%;
+}
+
+.breadcrumb.breadcrumb--white span a::before,
+.breadcrumb.breadcrumb--white span a::after {
+  background-color: $white;
+}
+
+.breadcrumb span a::before {
+  transform: rotate(49.4deg);
+}
+
+.breadcrumb span a::after {
+  transform: rotate(-49.4deg);
+}

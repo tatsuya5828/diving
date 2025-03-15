@@ -1,0 +1,6 @@
+@use "global" as *;
+
+.sub-blog-cards {
+  display: grid;
+  gap: rem(40);
+}
